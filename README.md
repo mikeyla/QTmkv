@@ -55,7 +55,11 @@ Requirements:
 Steps:
 1.  Clone the repo.
 2.  Place `ffmpeg` and `ffprobe` binaries in the root directory (or ensure they are in your path).
-3.  Run the build script (commands found in `create_dmg.sh` and `make_icon_v2.sh`).
+3.  Run the build script:
+    ```bash
+    ./build.sh
+    ```
+    This will compile the app, bundle the resources, and create the DMG installer in the `build/` directory.
 
 ## License
 
