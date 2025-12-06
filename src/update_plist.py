@@ -10,7 +10,12 @@ else:
 with open(plist_path, 'rb') as f:
     plist = plistlib.load(f)
 
-# Add MKV document type
+# Ensure basic keys
+plist['CFBundleName'] = 'QTmkv'
+plist['CFBundleDisplayName'] = 'QTmkv'
+plist['CFBundleShortVersionString'] = '1.1'
+plist['CFBundleVersion'] = '1.1'
+
 # Add MKV document type with UTType
 plist['CFBundleDocumentTypes'] = [
     {
@@ -28,7 +33,7 @@ plist['UTExportedTypeDeclarations'] = [
     {
         'UTTypeIdentifier': 'org.matroska.mkv',
         'UTTypeDescription': 'Matroska Video File',
-        'UTTypeConformsTo': ['public.movie'],
+        'UTTypeConformsTo': ['public.movie', 'public.video', 'public.audiovisual-content'],
         'UTTypeTagSpecification': {
             'public.filename-extension': ['mkv'],
             'public.mime-type': ['video/x-matroska']
