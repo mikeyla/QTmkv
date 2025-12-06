@@ -1,0 +1,22 @@
+# Build artifacts
+build/
+*.app/
+*.dmg
+dmg_root/
+temp.dmg
+*.pyc
+__pycache__/
+
+# System files
+.DS_Store
+.background/
+
+# Old builds
+z_Old/
+
+# Logs and temporary files
+*.log
+
+# Large media files (exclude MKV files)
+*.mkv
+*.mov
