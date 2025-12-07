@@ -22,9 +22,15 @@ plist['CFBundleDocumentTypes'] = [
         'CFBundleTypeExtensions': ['mkv'],
         'CFBundleTypeIconFile': 'AppIcon',
         'CFBundleTypeName': 'Matroska Video File',
-        'CFBundleTypeRole': 'Viewer',
+        'CFBundleTypeRole': 'Editor',
         'LSHandlerRank': 'Owner',
-        'LSItemContentTypes': ['org.matroska.mkv']
+        'LSItemContentTypes': [
+            'org.matroska.mkv',
+            'public.movie',
+            'public.video',
+            'public.audiovisual-content',
+            'public.data'  # Fallback to accept anything
+        ]
     }
 ]
 
