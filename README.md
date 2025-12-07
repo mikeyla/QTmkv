@@ -61,6 +61,19 @@ Steps:
     ```
     This will compile the app, bundle the resources, and create the DMG installer in the `build/` directory.
 
-## License
+## Troubleshooting
 
-MIT
+### App still appears in "Open With" after deleting
+If you deleted the app but it still shows up in the "Open With" menu, or if macOS keeps reverting your default application choice, you may need to reset the Launch Services database.
+
+Run this command in Terminal:
+```bash
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+```
+*Note: This will reset all file associations to their defaults.*
+
+### "Damaged" or "Can't be opened" error
+If you see an error saying the app is damaged, run this command to clear the quarantine attribute:
+```bash
+xattr -cr /Applications/QTmkv.app
+```
